@@ -1,0 +1,192 @@
+/* PayrollPro AI - Premium Dark Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #8b5cf6;
+    --accent: #06b6d4;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --bg-sidebar: #0f172a;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border: #334155;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+    --radius: 12px;
+    --transition: all 0.2s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+/* Hide Streamlit chrome */
+#MainMenu { visibility: hidden; }
+header[data-testid="stHeader"] { display: none !important; }
+footer { visibility: hidden; }
+[data-testid="stDecoration"] { display: none; }
+
+/* Main content */
+.main .block-container {
+    padding: 1.5rem 2rem 2rem;
+    max-width: 1400px;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+    background: var(--bg-sidebar) !important;
+    border-right: 1px solid var(--border);
+    min-height: 100vh;
+}
+
+.sidebar-logo {
+    padding: 1.5rem 1.25rem 1rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.sidebar-logo h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+.sidebar-logo p {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin: 0.15rem 0 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.sidebar-user {
+    padding: 0.75rem 1.25rem;
+    margin: 0.5rem 0.75rem;
+    background: rgba(99, 102, 241, 0.12);
+    border-radius: var(--radius);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+}
+.sidebar-user .user-name { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); }
+.sidebar-user .user-role { font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ── KPI Cards ───────────────────────────────────────────────────── */
+.kpi-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+.kpi-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.55); }
+.kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+/* ── Charts ──────────────────────────────────────────────────────── */
+.chart-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+.chart-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────── */
+[data-testid="stDataFrame"] { border-radius: var(--radius); overflow: hidden; }
+thead tr th { background: #1e293b !important; color: var(--text-secondary) !important; font-size: 0.8rem !important; text-transform: uppercase; letter-spacing: 0.06em; }
+tbody tr:hover td { background: rgba(99,102,241,.08) !important; }
+
+/* ── Forms ───────────────────────────────────────────────────────── */
+[data-testid="stForm"] {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────── */
+.stButton > button {
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: var(--transition) !important;
+    border: 1px solid var(--border) !important;
+    background: rgba(99,102,241,.15) !important;
+    color: var(--text-primary) !important;
+}
+.stButton > button:hover {
+    background: rgba(99,102,241,.35) !important;
+    border-color: var(--primary) !important;
+    transform: translateY(-1px);
+}
+.stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+/* ── Page header ─────────────────────────────────────────────────── */
+.page-header { margin-bottom: 1.5rem; }
+.page-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 0.25rem;
+}
+.page-header p { color: var(--text-secondary); margin: 0; font-size: 0.9rem; }
+
+/* ── Status badges ───────────────────────────────────────────────── */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+.badge-success { background: rgba(16,185,129,.2); color: #10b981; }
+.badge-warning { background: rgba(245,158,11,.2); color: #f59e0b; }
+.badge-danger  { background: rgba(239,68,68,.2);  color: #ef4444; }
+.badge-info    { background: rgba(6,182,212,.2);   color: #06b6d4; }
+
+/* ── Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+/* ── Metric (st.metric) ──────────────────────────────────────────── */
+[data-testid="metric-container"] {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    box-shadow: var(--shadow);
+}
+[data-testid="stMetricValue"] { color: var(--text-primary) !important; font-weight: 700; }
+[data-testid="stMetricLabel"] { color: var(--text-secondary) !important; font-size: 0.82rem; }
